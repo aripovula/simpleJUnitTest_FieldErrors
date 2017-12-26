@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+  <h2>TEST</h2>
+      <form id="cardform" th:action="@{${action}}" method="post" th:object="${fcexitem}" >
+    		<input type="hidden" th:field="*{id}"/>
+        		
+        <div class="section">
+        		<p id="pq" class="pendingField">Your text *</p>
+            <div class="" th:classappend="${#fields.hasErrors('first')}? 'error' : ''">
+                <textarea id="First" th:field="*{first}" style="width:100%; height:140px;"></textarea>
+                <div id="warnq" class="fieldWarning" th:if="${#fields.hasErrors('first')}" th:errors="*{first}"></div>
+            </div>
+        </div>
+        		
+        		
+        		<div>
+	            <button type="submit">Upload</button>
+            </div>
+
+  </form>
+</body>
+</html>
